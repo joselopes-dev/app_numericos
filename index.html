@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Code - X</title>
+  <link rel="stylesheet" href="stylejogo_card.css">
+  <link rel="manifest" href="/manifest.json" />
+  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.5.1/dist/confetti.browser.min.js"></script>
+</head>
+<body>
+  <h2>Associe as Tags</h2>
+
+  <!-- Seleção do jogo -->
+  <select id="game-selector" onchange="startGame()">
+    <option value="1">Jogo 1 - Tags HTML</option>
+    <option value="2">Jogo 2 - Tags HTML</option>
+    <option value="3">Jogo 3 - Tags HTML</option>
+    <!-- Adicione mais jogos aqui -->
+  </select>
+<div class="centralizar">
+  <!-- Contêiner das áreas de drop -->
+  <div class="drop-area-container" id="drop-area-container">
+    <!-- Áreas de drop serão geradas dinamicamente -->
+  </div></div>
+
+  <!-- Imagens arrastáveis -->
+  <div class="conteine1">
+    <div class="drag-container" id="drag-container">
+      <!-- Imagens serão geradas dinamicamente -->
+    </div>
+  </div>
+
+  <div class="emlinha_botoes">
+  <div class="botoes">
+    <button class="proximo1" onclick="restartGame()">Reiniciar Jogo</button>
+    <!--<button class="proximo"><a href="#">Próximo</a></button>-->
+  </div>
+
+  <!--<div class="botoes">
+    <a href="../index_plataforma.html"><button class="proximo1">Plataforma</button></a>
+    <button class="proximo"><a href="#">Próximo</a></button>
+  </div>
+</div>-->
+
+  <script>
+    if ('serviceWorker' in navigator) {
+        navigator.serviceWorker.register('/sw.js')
+            .then(() => console.log('Service Worker registrado!'))
+            .catch(error => console.log('Falha no registro do Service Worker:', error));
+    }
+  </script>
+
+  <script src="scriptjogo_card.js" defer></script>
+
+  <style>
+    body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    background-image: url(./image.png);
+  }
+
+  .emlinha_botoes {
+    display: flex;
+    justify-content: center;
+    gap: 10px; /* Espaço entre os botões */
+  }
+
+  .botoes {
+      text-align: center;
+  }
+
+  .proximo1 {
+    cursor: pointer;
+  }
+  
+  .proximo1,
+  .proximo {
+    width: 100px;
+    height: 50px;
+    border-radius: 5px;
+  }
+
+  .proximo a {
+    text-decoration: none;
+    
+  }
+
+  button:hover {
+    background-color: orange;
+    color: white;
+  }
+
+  a:hover {
+    color: white;
+  }
+  
+
+  </style>
+</body>
+</html>
